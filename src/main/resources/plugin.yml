@@ -1,0 +1,9 @@
+name: Geld-API
+version: '${version}'
+main: org.super_man2006.geldapi.Geld_API
+api-version: 1.19
+commands:
+  balance:
+    description: "Get your balance."
+    usage: "/balance"
+    aliases: bal
