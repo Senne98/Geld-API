@@ -8,6 +8,7 @@ import org.super_man2006.geldapi.Geld_API;
 import org.super_man2006.geldapi.event.EventListener;
 import org.super_man2006.geldapi.event.balance.BalanceChangeEvent;
 
+import java.util.HashMap;
 import java.util.UUID;
 
 public class Balance implements Listener {
@@ -16,7 +17,13 @@ public class Balance implements Listener {
     public void onJoin(PlayerJoinEvent e) {
         Player player = e.getPlayer();
         UUID uuid = player.getUniqueId();
-        if (Geld_API.balance.containsKey(uuid) && Geld_API.balance.get(uuid) != null) {
+        if (Geld_API.balance == null) {
+            HashMap<UUID, Long> temp = new HashMap<>();
+            temp.put(uuid, 0L);
+            Geld_API.balance = temp;
+            return;
+        }
+        if (Geld_API.balance.get(uuid) != null && Geld_API.balance.containsKey(uuid)) {
             return;
         }
         Geld_API.balance.put(uuid, 0L);

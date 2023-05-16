@@ -4,6 +4,7 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.super_man2006.geldapi.commands.Balance;
+import org.super_man2006.geldapi.commands.Test;
 import org.super_man2006.geldapi.json.Currency;
 
 import java.io.File;
@@ -43,7 +44,6 @@ public final class Geld_API extends JavaPlugin {
         return currencyFile;
     }
     public static File currencyFileStatic;
-
     @Override
     public void onDisable() {
         // Plugin shutdown logic
