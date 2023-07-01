@@ -9,6 +9,12 @@
     <a href="https://legacy.curseforge.com/minecraft/bukkit-plugins/geld-api" alt="available on CurseForge">
         <img src="https://img.shields.io/badge/-available_on_CurseForge-ce6d31?logo=curseforge&style=flat" /></a>
   </p>
+
+  </p>
+<p align="center">
+    <a href="https://discord.gg/DBabnRZAhC" alt="join_Discord">
+        <img src="https://img.shields.io/badge/-join_Discord-blue?logo=discord&style=flat&logoColor=white" /></a>
+  </p>
   
 # Geld-Api  
 Geld-Api is a plugin used to connect economy plugins together, you can create you own plugins using for this economy ecosystem if you want. If you have any [questions](https://github.com/Senne98/Geld-API/issues) on how to do this you can open an issue.
