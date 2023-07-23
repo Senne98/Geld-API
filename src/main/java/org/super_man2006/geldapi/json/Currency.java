@@ -16,12 +16,8 @@ public class Currency {
 
     private static File file;
 
-    private static void file() {
-        file = Geld_API.currencyFileStatic;
-    }
-
     public static void write() {
-        file();
+        file = Geld_API.currencyFileStatic;
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         if (Geld_API.balance == null) {
             return;
@@ -38,7 +34,7 @@ public class Currency {
     }
 
     public static void read() {
-        file();
+        file = Geld_API.currencyFileStatic;
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         if(!file.canRead()) { return; }
         try {
