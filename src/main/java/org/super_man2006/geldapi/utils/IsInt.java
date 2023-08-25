@@ -1,4 +1,4 @@
-package org.super_man2006.geldapi.test;
+package org.super_man2006.geldapi.utils;
 
 public class IsInt {
 

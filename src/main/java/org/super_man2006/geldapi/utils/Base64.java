@@ -1,4 +1,4 @@
-package org.super_man2006.geldapi.tools;
+package org.super_man2006.geldapi.utils;
 
 import org.bukkit.util.io.BukkitObjectInputStream;
 import org.bukkit.util.io.BukkitObjectOutputStream;

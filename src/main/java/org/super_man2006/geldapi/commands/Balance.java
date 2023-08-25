@@ -6,6 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.super_man2006.geldapi.Geld_API;
 
 public class Balance implements CommandExecutor {
 
@@ -19,8 +20,12 @@ public class Balance implements CommandExecutor {
 
         if (cmd.getName().equalsIgnoreCase("balance")) {
             Player player = (Player) sender;
-            Long balance = org.super_man2006.geldapi.player.Balance.get(player.getUniqueId());
-            player.sendMessage(Component.text("Your balance: " + balance.toString()).color(NamedTextColor.GREEN));
+            player.sendMessage(Component.text("Your balances:").color(NamedTextColor.GREEN));
+            Geld_API.currencyList.forEach((key, currency) -> {
+                Component name = currency.getName();
+                String balance = currency.get(player.getUniqueId()).toString();
+                player.sendMessage(name.append(Component.text(": " + balance)).color(NamedTextColor.GREEN));
+            });
         }
         return true;
     }
