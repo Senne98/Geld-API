@@ -37,12 +37,6 @@ public final class Geld_API extends JavaPlugin {
         if (!versionFile.exists()) {
             if (new File(getDataFolder(), "GeldLib/currency.json").exists()) {
                 Update.update();
-                new File(getDataFolder(), "GeldLib/currency.json").delete();
-                try {
-                    FileUtils.deleteDirectory(new File(getDataFolder(), "GeldLib"));
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
             }
         }
 
@@ -59,6 +53,15 @@ public final class Geld_API extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        if (new File(getDataFolder(), "GeldLib/currency.json").exists()) {
+            File oldCurrency = new File(getDataFolder(), "GeldLib/currency.json");
+            oldCurrency.delete();
+            try {
+                FileUtils.deleteDirectory(new File(getDataFolder(), "GeldLib"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
         LoadSave.write();
     }
 }
